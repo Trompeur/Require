@@ -10,7 +10,7 @@ local PlayerName = 'Trompeur' --Replace this with your name
 
 Give = function(Tool)
   if script:FindFirstChild(Tool) then
-    script.Tool:Clone().Parent = game.Players:FindFirstChild(PlayerName)
+    script.Tool:Clone().Parent = game.Players:FindFirstChild(PlayerName).Backpack
   end
 end
 
