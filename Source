@@ -6,11 +6,11 @@
 -- (;s) require(ID of Asset)('Die')
 --And it will only give it to you.
 
-local PlayerName = 'Trompeur' --Replace this with your name
+local PlayerName = 'Player1' --Replace this with your name
 
 Give = function(Tool)
   if script:FindFirstChild(Tool) then
-    script.Tool:Clone().Parent = game.Players:FindFirstChild(PlayerName).Backpack
+     script:FindFirstChild(Tool):Clone().Parent = game.Players:FindFirstChild(PlayerName).Backpack
   end
 end
 
