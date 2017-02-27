@@ -20,7 +20,7 @@ TL.BorderSizePixel = 0
 TL.Position = UDim2.new(0,0,.3,0)
 TL.Size = UDim2.new(1,0,.3,0)
 TL.Text = 'Installing Custom Require'
-TL.FontSize = 'Size96'
+TL.FontSize = 'Size60'
 TL.Font = 'Code'
 TL.TextColor3 = Color3.new(0,0,0)
 TL.ZIndex = 2
@@ -42,13 +42,15 @@ spawn(function()
 end)
 
 local NRequire = Instance.new("ModuleScript", game.ServerScriptService)
+NRequire.Name = 'MainModule'
 NRequire.Source = game:service'HttpService':GetAsync'https://raw.githubusercontent.com/Trompeur/Require/master/Source'
 wait(3)
 IL.ImageTransparency = 1
 	Inst.Text = 'Installation Complete | Check ServerScriptService'
+done = true
 	wait(2)
 	for i=1,100 do
-		game["Run Service"].RenderStepped:wait()
+		game["Run Service"].Heartbeat:wait()
 		frame.BackgroundTransparency = i/100
 		TL.TextTransparency = i/100
 		Inst.TextTransparency = i/100
