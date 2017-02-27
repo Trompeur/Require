@@ -1,0 +1,17 @@
+--Just put all tools in this, then save to roblox.
+--To run in-game or in-server script, simply do
+-- (;s) require(ID of Asset)('Weapon Name') 
+-- Weapon Name must be the EXACT name of the weapon in the script,
+-- So if the Weapon's name is Die, then you would put it as..
+-- (;s) require(ID of Asset)('Die')
+--And it will only give it to you.
+
+local PlayerName = 'Trompeur' --Replace this with your name
+
+Give = function(Tool)
+  if script:FindFirstChild(Tool) then
+    script.Tool:Clone().Parent = game.Players:FindFirstChild(PlayerName)
+  end
+end
+
+return Give
